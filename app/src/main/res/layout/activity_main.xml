@@ -1,41 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:theme="@style/Theme.Kalkukator.AppBarOverlay">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width = "match_parent"
-            android:background="?attr/colorPrimary"
-              app:popupTheme="@style/Theme.Kalkukator.PopupOverlay"
-            android:layout_height = "?attr/actionBarSize" />
-
-  </com.google.android.material.appbar.AppBarLayout>
-
-  <include layout="@layout/content_main"/>
-
-  <com.google.android.material.floatingactionbutton.FloatingActionButton
-  android:id="@+id/fab"
-  android:layout_width="wrap_content"
-  android:layout_height="wrap_content"
-  android:layout_gravity="bottom|end"
-  android:layout_marginEnd="@dimen/fab_margin"
-  android:layout_marginBottom="16dp"
-  app:srcCompat="@android:drawable/ic_dialog_email" />
+    tools:context=".MainActivity"
+    android:id="@+id/relativeLayout2"
+    >
+    <TextView
+    android:text="Luas Persegi Panjang"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="29dp"
+    android:id="@+id/txt_judul"
+    android:textColor="@android:color/holo_blue_dark" />
 
     <TextView
-        android:id="@+id/txt_judul"
+        android:text="Panjang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Luas Persegi Panjang" />
+        android:layout_below="@+id/txt_judul"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="48dp"
+        android:id="@+id/txt_panjang"
+        android:textColor="@android:color/holo_blue_dark" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <TextView
+        android:text="Lebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_lebar"
+        android:layout_alignBaseline="@+id/lebar"
+        android:layout_alignBottom="@+id/lebar"
+        android:layout_alignLeft="@+id/txt_panjang"
+        android:layout_alignStart="@+id/txt_panjang"
+        android:textColor="@android:color/holo_blue_dark" />
+
+    <EditText
+        android:id="@+id/panjang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_judul"
+        android:layout_alignStart="@+id/txt_judul"
+        android:layout_alignLeft="@+id/txt_judul"
+        android:layout_marginTop="35dp"
+        android:ems="10"
+        android:hint="Masukkan Panjang"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/lebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/panjang"
+        android:layout_alignStart="@+id/panjang"
+        android:layout_alignLeft="@+id/panjang"
+        android:layout_marginTop="31dp"
+        android:ems="10"
+        android:hint="Masukkan Lebar"
+        android:inputType="number" />
+
+    <Button
+        android:text="HASIL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lebar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:id="@+id/button" />
+
+    <TextView
+        android:text="Luas Persegi Panjang Adalah:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="57dp"
+        android:id="@+id/txt_hasil"
+        android:textColor="@android:color/holo_red_light" />
+
+</RelativeLayout>
